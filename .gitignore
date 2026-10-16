@@ -1,0 +1,8 @@
+target/
+certs/*.crt
+.idea/
+*.iml
+.vscode/
+*.log
+.DS_Store
+entrega/
