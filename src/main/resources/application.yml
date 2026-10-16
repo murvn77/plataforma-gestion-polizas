@@ -1,0 +1,35 @@
+# Por defecto H2 en memoria, para correr sin Docker
+spring:
+  application:
+    name: polizas-api
+  datasource:
+    url: jdbc:h2:mem:polizas;DB_CLOSE_DELAY=-1
+    username: sa
+    password: 123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+server:
+  port: 8080
+
+polizas:
+  ipc-porcentaje: ${IPC_PORCENTAJE:5.20}
+
+# Mock del CORE expuesto por esta misma aplicación
+core:
+  url: ${CORE_URL:http://localhost:${server.port}/core-mock/evento}
+
+seguridad:
+  api-key: ${API_KEY:123456}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

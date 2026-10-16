@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://db:5432/polizas}
+    username: ${DB_USER:polizas}
+    password: ${DB_PASSWORD:polizas}
